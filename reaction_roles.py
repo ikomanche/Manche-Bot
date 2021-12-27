@@ -1,4 +1,11 @@
 import discord
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  # take environment variables from .env.
+
+# Code of your application, which uses environment variables (e.g. from `os.environ` or
+# `os.getenv`) as if they came from the actual environment.
 
 """
 client = discord.Client()
@@ -71,4 +78,4 @@ intents = discord.Intents.default()
 intents.members = True
 
 client = MyClient(intents=intents)
-client.run('OTI0Mjg0NjYwNTE3ODM4OTI4.YccVKw.adQyW9jdPk4NBevEgKkT8YlxSns')
+client.run(os.getenv("token"))
